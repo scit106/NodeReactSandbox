@@ -57,30 +57,51 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
 
-	var CommentBox = function (_React$Component) {
-	  _inherits(CommentBox, _React$Component);
+	var GreeterBox = function (_React$Component) {
+	  _inherits(GreeterBox, _React$Component);
 
-	  function CommentBox() {
-	    _classCallCheck(this, CommentBox);
+	  function GreeterBox(props) {
+	    _classCallCheck(this, GreeterBox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentBox).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GreeterBox).call(this, props));
+
+	    _this.state = { value: "Hello" };
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    return _this;
 	  }
 
-	  _createClass(CommentBox, [{
+	  _createClass(GreeterBox, [{
+	    key: 'handleChange',
+	    value: function handleChange(event) {
+	      this.setState({ value: event.target.value });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return React.createElement(
 	        'div',
-	        { className: 'commentBox' },
-	        'Hello, I am a CommentBox.'
+	        null,
+	        React.createElement(
+	          'label',
+	          null,
+	          ' Name: '
+	        ),
+	        React.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChange }),
+	        React.createElement(
+	          'div',
+	          { className: 'greeterBox' },
+	          'Hello, I am a ',
+	          this.state.value,
+	          '.'
+	        )
 	      );
 	    }
 	  }]);
 
-	  return CommentBox;
+	  return GreeterBox;
 	}(React.Component);
 
-	ReactDOM.render(React.createElement(CommentBox, null), document.getElementById('example'));
+	ReactDOM.render(React.createElement(GreeterBox, null), document.getElementById('example'));
 
 /***/ },
 /* 1 */
