@@ -50,7 +50,7 @@
 	ReactDOM.render(React.createElement(
 	  'h1',
 	  null,
-	  'Hello, world!'
+	  'Hello from the other side'
 	), document.getElementById('example'));
 
 /***/ },
