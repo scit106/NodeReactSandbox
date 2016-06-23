@@ -47,11 +47,19 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
 
-	ReactDOM.render(React.createElement(
-	  'h1',
-	  null,
-	  'Hello from the other side'
-	), document.getElementById('example'));
+	var CommentBox = React.createClass({
+	  displayName: 'CommentBox',
+
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'commentBox' },
+	      'Hello, I am a CommentBox.'
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(CommentBox, null), document.getElementById('example'));
 
 /***/ },
 /* 1 */
