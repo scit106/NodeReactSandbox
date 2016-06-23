@@ -5,7 +5,7 @@ const _ = require('lodash');
 class GreeterBox extends React.Component {
   constructor(props){
     super(props);
-    this.state = {value: "Hello"};
+    this.state = {value: this.props.value};
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event) {
@@ -25,7 +25,23 @@ class GreeterBox extends React.Component {
   }
 }
 
+class GreeterDad extends React.Component {
+	render() {
+		return(
+			<div className="greeterBox">
+				<p className="header">
+					<GreeterBox
+						value="Jackie" />
+					<GreeterBox
+						value="Scott"/>
+				</p>
+			</div>);
+	}
+}
+	
+
 ReactDOM.render(
-  <GreeterBox />,
+  <GreeterDad />,
   document.getElementById('example')
+
 );

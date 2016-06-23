@@ -66,7 +66,7 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GreeterBox).call(this, props));
 
-	    _this.state = { value: "Hello" };
+	    _this.state = { value: _this.props.value };
 	    _this.handleChange = _this.handleChange.bind(_this);
 	    return _this;
 	  }
@@ -101,7 +101,37 @@
 	  return GreeterBox;
 	}(React.Component);
 
-	ReactDOM.render(React.createElement(GreeterBox, null), document.getElementById('example'));
+	var GreeterDad = function (_React$Component2) {
+	  _inherits(GreeterDad, _React$Component2);
+
+	  function GreeterDad() {
+	    _classCallCheck(this, GreeterDad);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GreeterDad).apply(this, arguments));
+	  }
+
+	  _createClass(GreeterDad, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        { className: 'greeterBox' },
+	        React.createElement(
+	          'p',
+	          { className: 'header' },
+	          React.createElement(GreeterBox, {
+	            value: 'Jackie' }),
+	          React.createElement(GreeterBox, {
+	            value: 'Scott' })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return GreeterDad;
+	}(React.Component);
+
+	ReactDOM.render(React.createElement(GreeterDad, null), document.getElementById('example'));
 
 /***/ },
 /* 1 */
