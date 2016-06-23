@@ -1,15 +1,15 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-var CommentBox = React.createClass({
-  render: function() {
+class CommentBox extends React.Component {
+  render() {
     return (
-        <div className="commentBox">
+      <div className="commentBox">
           Hello, I am a CommentBox.
-        </div>
-      );
+      </div>
+    );
   }
-});
+}
 
 ReactDOM.render(
   <CommentBox />,
