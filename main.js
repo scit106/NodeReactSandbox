@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const _ = require('lodash');
 
 class GreeterBox extends React.Component {
   constructor(props){
@@ -17,7 +18,7 @@ class GreeterBox extends React.Component {
         <input type="text" value={this.state.value} onChange={this.handleChange} />
 
         <div className="greeterBox">
-            Hello, I am a {this.state.value}.
+            Hello, I am a {_.join(_.reverse(_.split(this.state.value, "")), "")}
         </div>
       </div>
     );
